@@ -230,7 +230,7 @@ module.exports = function (grunt) {
           },
           pages: {
             options: {
-              remote: '!!! PASTE YOUR GITHUB REPO URL HERE',
+              remote: 'https://github.com/jaypith/portfolio',
               branch: 'gh-pages'
             }
           },
