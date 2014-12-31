@@ -1,0 +1,191 @@
+/*****************************************************************************
+  portfoliov1
+******************************************************************************/
+
+
+@import '../../bower_components/bourbon/dist/_bourbon.scss';
+@import '../../bower_components/neat/app/assets/stylesheets/_neat.scss';
+
+
+
+
+
+/*****************************************************************************
+  Base Styles
+******************************************************************************/
+// Variables: Color 
+
+$j-teal:#00A99D;
+$j-beige-light:#E5E1D6;
+$j-beige-medium:#CCC8BC;
+$j-primary-grey:#333;
+
+// resets:
+html{
+	font-size:14px;
+	line-height:1.25;
+	box-sizing: border-box;
+	font-weight:normal;
+	font-family:'Lato', Arial,Helvatica, sans-serif;
+	background-color:$j-beige-medium;
+}
+
+*,
+*:before,
+*:after{
+	box-sizing:inherit;
+	margin:0;
+	padding:0;
+}
+
+body{
+	min-width:250px;
+}
+
+img{
+	max-width:100%;
+}
+
+ul{
+	list-style-type:none;
+	display:block;
+	padding:0px;
+	margin:0px;
+	text-indent:0px;
+}
+
+h1{
+	font-size:1.4em;
+	margin:1em 0.5em 0.2em;
+}
+
+h3{
+	font-size:0.9em;
+	margin:0.2em, 0;
+	padding:0;
+	font-weight:400;
+}
+
+
+
+/*****************************************************************************
+  Layout Styles
+******************************************************************************/
+
+/* HEADER */
+
+header{
+    @include outer-container(100%);
+    padding:5px 5px;
+	background-color:$j-beige-light;
+}
+
+header .main-logo {
+	display:block;
+	float:left;
+	@include span-columns(8);
+	max-width:395px;
+}
+
+.mobi_nav_btn{
+	float:right;
+	height:40px;
+	width:40px;
+	background-color:$j-primary-grey;
+	margin-top:5px;
+}
+
+/*main navigation */
+
+#main_navigation {
+	background: $j-primary-grey;
+	padding:0.5em 0px;
+}
+
+
+
+#main_navigation li{
+	width:90%;
+	margin:1em auto;
+	padding:0.2em 0;
+	background:$j-primary-grey;
+	color:#CCC;
+	border-bottom:1px solid #000; 
+}
+
+/* main client gallery */
+
+.client_gallery p{
+	margin:0 0.5em 1em;
+	padding:0 0.5em;
+}
+
+
+
+/* SLIDER CLEAN UP*/
+
+.slider-nav,.slick-slider{
+	margin:5px auto;
+}
+
+.slider-nav{
+	width:90%;
+}
+
+.slider-nav .slick-slide{
+	margin:0 0.1em;
+}
+
+
+/* Client List */
+
+.client-thumbs{
+	margin-top:30px;
+	width:100%;
+	clear:both;
+	padding:0 0.8em;
+	@include span-columns(12);
+}
+
+.aThumb{
+	@include span-columns(6);
+	padding:0.5em 0em;
+}
+
+.aThumb:nth-child(2n){
+	margin-right:0px;
+	}
+	
+
+/* FOOTER */
+
+footer{
+	background:$j-primary-grey;
+	clear:both;
+	height:40px;
+	
+}
+
+footer p{
+	line-height:40px;
+	text-align:center;
+	color:#CCC;
+}
+
+
+
+/*****************************************************************************
+  Module Styles
+******************************************************************************/
+
+
+/*
+@media screen and (min-width:768px) and (max-width:1079px) {
+	nav{display:inline-block;
+	}
+
+}
+*/
+
+
+
