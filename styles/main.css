@@ -58,9 +58,19 @@ header {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding: 5px 5px;
+  padding: 5px 0px 0px;
   background-color: #E5E1D6; }
   header:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+header .mobi-header {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  clear: both; }
+  header .mobi-header:after {
     content: "";
     display: table;
     clear: both; }
@@ -81,12 +91,16 @@ header .main-logo {
   height: 40px;
   width: 40px;
   background-color: #333;
-  margin-top: 5px; }
+  margin-top: 10px;
+  margin-right: 10px; }
 
 /*main navigation */
+nav {
+  margin-top: 5px; }
+
 #main_navigation {
   background: #333;
-  padding: 0.5em 0px; }
+  padding: 0.2em 0px; }
 
 #main_navigation li {
   width: 90%;
@@ -150,10 +164,90 @@ footer p {
 /*****************************************************************************
   Module Styles
 ******************************************************************************/
-/*
-@media screen and (min-width:768px) and (max-width:1079px) {
-	nav{display:inline-block;
-	}
+@media screen and (min-width: 768px) {
+  /* HEADER */
+  header .mobi-header {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 31.7615656014%;
+    float: left;
+    margin-left: 2em; }
+    header .mobi-header:last-child {
+      margin-right: 0; }
 
-}
-*/
+  header .main-logo {
+    width: 100%; }
+
+  /* NAV STYLES */
+  .mobi_nav_btn {
+    display: none; }
+
+  nav {
+    float: right;
+    margin-top: 15px;
+    margin-right: 2em; }
+
+  #main_navigation {
+    background-color: transparent; }
+
+  #main_navigation li {
+    float: left;
+    display: inline-block;
+    background-color: transparent;
+    color: #333;
+    width: auto;
+    margin: 0 0.6em;
+    text-indent: 5px; }
+
+  #main_navigation li:hover {
+    background-color: #00A99D;
+    color: #E5E1D6; }
+
+  /*  SLICK IMAGES */
+  .client_gallery {
+    max-width: 98%;
+    margin-left: auto;
+    margin-right: auto; }
+    .client_gallery:after {
+      content: "";
+      display: table;
+      clear: both; }
+
+  .main-slick {
+    width: auto; }
+
+  .slick-slide img {
+    width: 100%; }
+
+  .slider-placement {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 40.2913699012%;
+    float: right;
+    overflow: hidden; }
+    .slider-placement:last-child {
+      margin-right: 0; }
+
+  .client_desc {
+    float: left;
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 48.821174201%;
+    margin-left: 0;
+    padding-left: 0; }
+    .client_desc:last-child {
+      margin-right: 0; }
+
+  .client_desc p {
+    font-size: 1.4em;
+    margin-left: 0;
+    padding-left: 0; }
+
+  /* FOOTER */
+  footer p {
+    text-align: right;
+    padding-right: 0.5em; }
+ }
