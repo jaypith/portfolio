@@ -128,15 +128,14 @@ nav {
 /* Client List */
 .client-thumbs {
   margin-top: 30px;
-  width: 100%;
   clear: both;
-  padding: 0 0.8em;
-  float: left;
-  display: block;
-  margin-right: 2.3576515979%;
-  width: 100%; }
-  .client-thumbs:last-child {
-    margin-right: 0; }
+  max-width: 95%;
+  margin-left: auto;
+  margin-right: auto; }
+  .client-thumbs:after {
+    content: "";
+    display: table;
+    clear: both; }
 
 .aThumb {
   float: left;
@@ -147,8 +146,10 @@ nav {
   .aThumb:last-child {
     margin-right: 0; }
 
-.aThumb:nth-child(2n) {
-  margin-right: 0px; }
+@media screen and (max-width: 768px) {
+  .aThumb:nth-child(2n) {
+    margin-right: 0px; }
+ }
 
 /* FOOTER */
 footer {
@@ -164,6 +165,7 @@ footer p {
 /*****************************************************************************
   Module Styles
 ******************************************************************************/
+/*********************** RESPONSIVE SASS *************************/
 @media screen and (min-width: 768px) {
   /* HEADER */
   header .mobi-header {
@@ -206,7 +208,7 @@ footer p {
 
   /*  SLICK IMAGES */
   .client_gallery {
-    max-width: 98%;
+    max-width: 80%;
     margin-left: auto;
     margin-right: auto; }
     .client_gallery:after {
@@ -245,6 +247,28 @@ footer p {
     font-size: 1.4em;
     margin-left: 0;
     padding-left: 0; }
+
+  /* client thumbs */
+  .client-thumbs {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto; }
+    .client-thumbs:after {
+      content: "";
+      display: table;
+      clear: both; }
+
+  .aThumb {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 23.2317613015%;
+    padding: 0.5em 0em; }
+    .aThumb:last-child {
+      margin-right: 0; }
+
+  .aThumb:nth-child(4n) {
+    margin-right: 0px; }
 
   /* FOOTER */
   footer p {
