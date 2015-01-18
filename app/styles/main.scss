@@ -151,10 +151,8 @@ nav{
 
 .client-thumbs{
 	margin-top:30px;
-	width:100%;
 	clear:both;
-	padding:0 0.8em;
-	@include span-columns(12);
+	@include outer-container(95%);
 }
 
 .aThumb{
@@ -162,9 +160,11 @@ nav{
 	padding:0.5em 0em;
 }
 
+@media screen and (max-width:768px) {
 .aThumb:nth-child(2n){
 	margin-right:0px;
 	}
+}
 	
 
 /* FOOTER */
@@ -189,6 +189,7 @@ footer p{
 ******************************************************************************/
 
 
+/*********************** RESPONSIVE SASS *************************/
 
 @media screen and (min-width:768px) {
 
@@ -244,7 +245,7 @@ header .main-logo{
 
 
 	.client_gallery{
-		@include outer-container(98%);
+		@include outer-container(80%);
 	}
 	.main-slick{
 		width:auto;
@@ -272,6 +273,22 @@ header .main-logo{
 		margin-left:0;
 		padding-left:0;
 	}
+
+/* client thumbs */
+
+.client-thumbs{
+	@include outer-container(80%);
+	}
+
+.aThumb{
+	@include span-columns(3);
+	padding:0.5em 0em;
+}
+
+.aThumb:nth-child(4n){
+	margin-right:0px;
+	}
+
 
 /* FOOTER */
 footer p{
