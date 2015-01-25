@@ -94,7 +94,7 @@ header .main-logo {
   float: right;
   height: 40px;
   width: 40px;
-  margin-top: 25px;
+  margin-top: 8px;
   margin-right: 10px;
   cursor: pointer;
   transition: all 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
