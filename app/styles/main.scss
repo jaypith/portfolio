@@ -16,6 +16,7 @@
 // Variables: Color 
 
 $j-teal:#00A99D;
+$j-hl-teal:#4ABAAF;
 $j-beige-light:#E5E1D6;
 $j-beige-medium:#CCC8BC;
 $j-primary-grey:#333;
@@ -46,6 +47,12 @@ img{
 	max-width:100%;
 }
 
+html,body{
+	height:100%;
+}
+
+
+
 ul{
 	list-style-type:none;
 	display:block;
@@ -74,6 +81,8 @@ h3{
 
 /* HEADER */
 
+
+
 header{
     @include outer-container(100%);
     padding:5px 0px 0px;
@@ -91,15 +100,24 @@ header .main-logo {
 	float:left;
 	@include span-columns(8);
 	max-width:395px;
+	transition: all 1s $ease-in-quad; 
+
 }
 
 .mobi_nav_btn{
 	float:right;
 	height:40px;
 	width:40px;
-	background-color:$j-primary-grey;
-	margin-top:10px;
+	margin-top:25px;
 	margin-right:10px;
+	cursor:pointer;
+	transition:all 0.5s $ease-in-out-quad;
+}
+
+.mobi_nav_btn_clicked{
+	@include transform-origin(center center);
+	@include transform(rotate(180deg));
+
 }
 
 /*main navigation */
@@ -111,8 +129,8 @@ nav{
 #main_navigation {
 	background: $j-primary-grey;
 	padding:0.2em 0px;
-}
 
+}
 
 #main_navigation li{
 	width:90%;
@@ -125,12 +143,18 @@ nav{
 
 /* main client gallery */
 
+.client_gallery{
+	margin-top:20px;
+}
+
 .client_gallery p{
 	margin:0 0.5em 1em;
 	padding:0 0.5em;
 }
 
-
+	.slick-slide img{
+		width:100%;
+	}	
 
 /* SLIDER CLEAN UP*/
 
@@ -158,19 +182,46 @@ nav{
 .aThumb{
 	@include span-columns(6);
 	padding:0.5em 0em;
+	cursor:pointer;
 }
 
-@media screen and (max-width:768px) {
-.aThumb:nth-child(2n){
-	margin-right:0px;
-	}
+.aThumb img{
+	-webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.30);	
+	-moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.30);
+	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.30);
+	opacity: 0.7;
+	transition:all 1s $ease-out-back;
 }
+
+.aThumb img:hover{
+	opacity:1;
+	@include transform(scale(1.2));
+	@include transform-origin(center center);
+	-webkit-box-shadow: 2px 10px 5px 0px rgba(0,0,0,0.20);	
+	-moz-box-shadow: 2px 10px 5px 0px rgba(0,0,0,0.20);
+	box-shadow: 2px 10px 5px 0px rgba(0,0,0,0.20);
+	
+}
+
+
 	
 
 /* FOOTER */
 
+.page-wrap{
+	min-height:100%;
+	margin-bottom:-40px;
+}
+
+.page-wrap:after {
+  content: "";
+  display: block;
+  height:40px;
+}
+
 footer{
 	background:$j-primary-grey;
+	position:relative;
 	clear:both;
 	height:40px;
 	
@@ -191,57 +242,85 @@ footer p{
 
 /*********************** RESPONSIVE SASS *************************/
 
+@media screen and (max-width:768px) {
+	.aThumb:nth-child(2n){
+		margin-right:0px;
+	}
+
+	#main_navigation li{
+		display:none;}
+	}
+
+
+
 @media screen and (min-width:768px) {
 
 /* HEADER */
 
 
 
-header .mobi-header{
-	@include span-columns(4);
-	float:left;
-	margin-left:2em;
-}
+	header .mobi-header{
+		@include span-columns(4);
+		float:left;
+		margin-left:2em;
+	}
 
 
-header .main-logo{
-	width:100%;
-	
+	header .main-logo{
+		width:100%;
+		
 
-}
+	}
 
 
 /* NAV STYLES */	
 	.mobi_nav_btn{display:none;}
 
 
-	nav{
-		float:right;
-		margin-top:15px;
-		margin-right:2em;
-	}
-
 	#main_navigation{
+		float:right;
+		margin-right:2em;
+		position:relative;
+		bottom:0px;
 		background-color:transparent;
 	}
+
+	
 
 	#main_navigation li{
 		float:left;
 		display:inline-block;
-		background-color:transparent;
-		color:$j-primary-grey;
-		width:auto;
-		margin:0 0.6em;
-		text-indent:5px;
-	}
-
-	#main_navigation li:hover{
 		background-color:$j-teal;
 		color:$j-beige-light;
-		
+		width:auto;
+		padding:8px 10px;
+		margin:0px 0.3em 0px;
+		border-radius:5px;
+		border:none;
+		cursor:pointer;
+		transition:opacity 1s $ease-out-back, all 1s $ease-out-back;
+	}
+
+
+
+	#main_navigation li:hover{
+		background-color:$j-hl-teal;
+		@include transform(scale(1.1));
+		@include transform-origin(center center);
+		color:#FFF;	
 	}
 
 	/*  SLICK IMAGES */
+
+	.client_gallery .slick-list{
+		padding:5px;
+	}
+
+	.main-slick img{
+		-webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.30);	
+		-moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.30);
+		box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.30);
+	}
 
 
 	.client_gallery{
@@ -249,10 +328,9 @@ header .main-logo{
 	}
 	.main-slick{
 		width:auto;
+		transition:all 3s $ease-out-back;
 	}
-	.slick-slide img{
-		width:100%;
-	}	
+
 
 	.slider-placement{
 		@include span-columns(5);
@@ -263,16 +341,11 @@ header .main-logo{
 
 	.client_desc{
 		float:left;
-		@include span-columns(6);
 		margin-left:0;
 		padding-left:0;
 	}
 
-	.client_desc p{
-		font-size:1.4em;
-		margin-left:0;
-		padding-left:0;
-	}
+
 
 /* client thumbs */
 
@@ -285,15 +358,142 @@ header .main-logo{
 	padding:0.5em 0em;
 }
 
-.aThumb:nth-child(4n){
-	margin-right:0px;
-	}
-
-
 /* FOOTER */
 footer p{
 	text-align:right;
 	padding-right:0.5em;
 	}
+}
 
+
+/* p fix */
+
+@media screen and (min-width:768px) and (max-width:820px){
+	.client_desc{
+		@include span-columns(6);
+	}
+
+
+	.client_desc p{
+		font-size: 1em;
+		padding-left: 0;
+		margin-left: 0;
+		
+	}
+
+	.slider-placement{
+		@include span-columns(5);
+		float:right;
+		}
+
+	.aThumb:nth-child(4n){
+	margin-right:0px;
+	}
+
+}
+
+
+@media screen and (min-width:820px) and (max-width:1400px) {	
+
+	.client_desc{
+		@include span-columns(6);
+	}
+
+	.client_desc p{
+		font-size: 1.2em;
+		padding-left: 0;
+		margin-left: 0;
+		
+	}
+
+	.aThumb:nth-child(4n){
+	margin-right:0px;
+	}
+
+}
+
+
+@media screen and (min-width:1400px) {
+
+	.main-logo {
+		margin-bottom:10px;
+	}
+
+	#main_navigation li{
+		font-size:1.2em;
+	}
+
+	
+
+	.client_gallery{
+		@include outer-container(98%);
+		margin-top:10px;
+	}
+
+
+
+	.main-slick{
+		@include span-columns(8);
+		float:left;
+		margin-left:40px;
+
+	}
+
+	.client_desc{
+		float:left;
+		@include span-columns(3);
+		margin-left:30px;
+		margin-top:15px;
+	}
+
+	.client_desc p{
+		font-size: 1.8em;
+		padding-left: 0;
+		margin-left: 0;	
+	}
+
+	.slider-placement{
+		float:left;
+		@include span-columns(3);
+		margin-left:30px;
+		margin-top:10px;
+
+	}
+
+	.client-thumbs{
+		@include outer-container(92%);
+	}
+
+	.aThumb{
+	@include span-columns(2);
+	padding:0.5em 0em;
+	cursor:pointer;
+	}
+
+	.aThumb:nth-child(6n){
+		margin-right:0px;
+	}
+
+	h3{
+		font-size:1.2em;
+	}
+}
+
+
+/*******************************************************************************************/
+/*** MORE ANIMATION! MORE MORE MORE!! ****************************************************************/
+/*******************************************************************************************/
+
+
+
+.unloading{
+	opacity:0;
+	@include transform(translateY(-10px));
+	@include transform-origin(center top);
+}
+
+.unloading2{
+	opacity:0;
+	@include transform(scale(1.2));
+	@include transform-origin(center center);
 }
