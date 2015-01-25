@@ -3,28 +3,26 @@ $(document).ready(function(){
             slidesToShow: 1,
             slidesToScroll: 1,
             fade: true,
-            arrows:false,
+            arrows:true,
             autoplay: true,
             autoplaySpeed: 6000,
-            asNavFor: '.slider-nav'     
+            asNavFor: '.slider-nav',  
+            responsive: [
+            {
+              breakpoint:768,
+                settings:{
+                  arrows:false}
+              }
+            ]   
           });
 
           $('.slider-nav').slick({
             asNavFor: '.main-slick',
             slidesToShow: 3,
             slidesToScroll: 1,
-            dots: true,
+            dots: false,
             centerMode: true,
             focusOnSelect: true,
             arrows:false,
-            responsive: [
-                {
-                  breakpoint: 768,
-                  settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1
-                    }
-                }
-                ]
           });
 });
