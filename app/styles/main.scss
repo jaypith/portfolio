@@ -91,23 +91,22 @@ header{
 
 header .mobi-header{
 	@include outer-container(100%);
+	max-height:100px;
 	clear:both;
-
 }
 
 header .main-logo {
 	display:block;
 	float:left;
 	@include span-columns(8);
-	max-width:395px;
-	transition: all 1s $ease-in-quad; 
-
+	max-width:320px;
+	margin-top:12px;
+	
 }
 
 .mobi_nav_btn{
 	float:right;
-	height:40px;
-	width:40px;
+	height:100%;
 	margin-top:8px;
 	margin-right:10px;
 	cursor:pointer;
@@ -139,6 +138,10 @@ nav{
 	background:$j-primary-grey;
 	color:#CCC;
 	border-bottom:1px solid #000; 
+}
+
+#main_navigation li .mobi-only{
+	display:inline;
 }
 
 /* main client gallery */
@@ -181,11 +184,13 @@ nav{
 
 .aThumb{
 	@include span-columns(6);
-	padding:0.5em 0em;
+	padding:0.2em 0em;
 	cursor:pointer;
 }
 
+
 .aThumb img{
+	width:100%;
 	-webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.30);	
 	-moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.30);
 	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.30);
@@ -257,20 +262,21 @@ footer p{
 
 /* HEADER */
 
-
+	header .main-logo{
+		width:100%;
+		max-width:320px;
+	}
 
 	header .mobi-header{
 		@include span-columns(4);
 		float:left;
-		margin-left:2em;
-	}
-
-
-	header .main-logo{
-		width:100%;
 		
-
 	}
+
+	header .header-spacer{
+		@include outer-container(80%)
+	}
+	
 
 
 /* NAV STYLES */	
@@ -279,34 +285,40 @@ footer p{
 
 	#main_navigation{
 		float:right;
-		margin-right:2em;
+		margin:10px 0px;
 		position:relative;
 		bottom:0px;
 		background-color:transparent;
 	}
 
-	
+	#main_navigation li .mobi-only{
+		display:none;
+	}
 
 	#main_navigation li{
 		float:left;
-		display:inline-block;
-		background-color:$j-teal;
-		color:$j-beige-light;
-		width:auto;
-		padding:8px 10px;
+		display:inline;
+		line-height:40px;
+		color:$j-teal;
+		background:transparent;
+		font-size:1.5em;
+		padding:10px;
 		margin:0px 0.3em 0px;
-		border-radius:5px;
 		border:none;
 		cursor:pointer;
-		transition:opacity 1s $ease-out-back, all 1s $ease-out-back;
+		width:auto;
+	}
+
+
+	#main_navigation li:last-child{
+		margin-right:0px;
+		
 	}
 
 
 
 	#main_navigation li:hover{
 		background-color:$j-hl-teal;
-		@include transform(scale(1.1));
-		@include transform-origin(center center);
 		color:#FFF;	
 	}
 
@@ -375,7 +387,7 @@ footer p{
 
 
 	.client_desc p{
-		font-size: 1em;
+		font-size:1em;
 		padding-left: 0;
 		margin-left: 0;
 		
@@ -390,6 +402,11 @@ footer p{
 	margin-right:0px;
 	}
 
+	#main-navigation li{
+		font-size:3.6em;
+	}
+
+
 }
 
 
@@ -403,11 +420,15 @@ footer p{
 		font-size: 1.2em;
 		padding-left: 0;
 		margin-left: 0;
-		
+		color:$j-primary-grey;
 	}
 
 	.aThumb:nth-child(4n){
 	margin-right:0px;
+	}
+
+	#main_navigation li{
+		font-size:1.6em;
 	}
 
 }
@@ -417,19 +438,22 @@ footer p{
 
 	.main-logo {
 		margin-bottom:10px;
+
 	}
 
-	#main_navigation li{
-		font-size:1.2em;
-	}
 
-	
+	header .header-spacer{
+		@include outer-container(92%)
+	}
 
 	.client_gallery{
 		@include outer-container(98%);
 		margin-top:10px;
 	}
 
+	#main_navigation li{
+		font-size:2em;
+	}
 
 
 	.main-slick{
@@ -444,12 +468,14 @@ footer p{
 		@include span-columns(3);
 		margin-left:30px;
 		margin-top:15px;
+
 	}
 
 	.client_desc p{
 		font-size: 1.8em;
 		padding-left: 0;
 		margin-left: 0;	
+		color:$j-primary-grey;
 	}
 
 	.slider-placement{
@@ -477,6 +503,8 @@ footer p{
 	h3{
 		font-size:1.2em;
 	}
+
+
 }
 
 
@@ -484,13 +512,6 @@ footer p{
 /*** MORE ANIMATION! MORE MORE MORE!! ****************************************************************/
 /*******************************************************************************************/
 
-
-
-.unloading{
-	opacity:0;
-	@include transform(translateY(-10px));
-	@include transform-origin(center top);
-}
 
 .unloading2{
 	opacity:0;

@@ -3,8 +3,6 @@
 (function($) {
   $(document).ready(function() {
     // Add your jQuery code here
-    $('.main-logo').toggleClass('unloading');
-    $('#main_navigation li').toggleClass('unloading');
     $('.main-slick').toggleClass('unloading2');
 
 
