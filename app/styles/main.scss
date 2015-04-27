@@ -9,7 +9,6 @@
 
 
 
-
 /*****************************************************************************
   Base Styles
 ******************************************************************************/
@@ -21,6 +20,7 @@ $j-beige-light:#E5E1D6;
 $j-beige-medium:#CCC8BC;
 $j-primary-grey:#333;
 
+
 // resets:
 html{
 	font-size:14px;
@@ -29,6 +29,7 @@ html{
 	font-weight:normal;
 	font-family:'Lato', Arial,Helvatica, sans-serif;
 	background-color:$j-beige-medium;
+	color:#FFF;
 }
 
 *,
@@ -50,7 +51,6 @@ img{
 html,body{
 	height:100%;
 }
-
 
 
 ul{
@@ -107,7 +107,7 @@ header .main-logo {
 .mobi_nav_btn{
 	float:right;
 	height:100%;
-	margin-top:8px;
+	margin-top:12px;
 	margin-right:10px;
 	cursor:pointer;
 	transition:all 0.5s $ease-in-out-quad;
@@ -189,7 +189,8 @@ nav{
 }
 
 
-.aThumb img{
+
+.GITheWall .product-image, .aThumb .product-image{
 	width:100%;
 	-webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.30);	
 	-moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.30);
@@ -198,13 +199,14 @@ nav{
 	transition:all 1s $ease-out-back;
 }
 
-.aThumb img:hover{
+.GITheWall .product-image:hover, .aThumb .product-image:hover{
 	opacity:1;
-	@include transform(scale(1.2));
+	@include transform(scale(1.1));
 	@include transform-origin(center center);
 	-webkit-box-shadow: 2px 10px 5px 0px rgba(0,0,0,0.20);	
 	-moz-box-shadow: 2px 10px 5px 0px rgba(0,0,0,0.20);
 	box-shadow: 2px 10px 5px 0px rgba(0,0,0,0.20);
+	z-index:4000;
 	
 }
 
@@ -221,7 +223,7 @@ nav{
 .page-wrap:after {
   content: "";
   display: block;
-  height:40px;
+  height:0px;
 }
 
 footer{
@@ -229,7 +231,6 @@ footer{
 	position:relative;
 	clear:both;
 	height:40px;
-	
 }
 
 footer p{
@@ -238,14 +239,50 @@ footer p{
 	color:#CCC;
 }
 
+#about_me{
+	background:transparent;
+	overflow:hidden;
+	@include outer-container(100%);
+	text-align:center;
+	color:$j-primary-grey;
+	min-height:200px;
+	padding-top:10px;
+	background:$j-teal;
+	padding-bottom:10px;
+}
 
+#about_me p{
+	width:80%;
+	max-width:400px;
+	margin:0 auto 10px;
+}
+
+#resume{
+	width:100%;
+	margin:0px;
+	padding:0px;
+	text-align:center;
+	color:#FFF;
+	height:1000px;
+	overflow:hidden;
+	margin-top:100px;
+}
+
+.hidden-slide{
+	left:-1000px;
+}
+
+
+.gallery_wrap{
+	background-color:$j-primary-grey;
+}
 
 /*****************************************************************************
   Module Styles
 ******************************************************************************/
 
 
-/*********************** RESPONSIVE SASS *************************/
+/*********************** RESPONSIVE *************************/
 
 @media screen and (max-width:768px) {
 	.aThumb:nth-child(2n){
@@ -259,12 +296,21 @@ footer p{
 
 
 @media screen and (min-width:768px) {
-
 /* HEADER */
+	header{
+		position:fixed;
+		z-index:100;
+		width:100%;
+		top:0px;
+		-webkit-box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.2);
+        -moz-box-shadow:0px 2px 5px 0px rgba(50, 50, 50, 0.2);
+        box-shadow:0px 2px 5px 0px rgba(50, 50, 50, 0.2);
+	}
 
 	header .main-logo{
 		width:100%;
 		max-width:320px;
+
 	}
 
 	header .mobi-header{
@@ -288,6 +334,7 @@ footer p{
 		margin:10px 0px;
 		position:relative;
 		bottom:0px;
+		width:auto;
 		background-color:transparent;
 	}
 
@@ -309,20 +356,64 @@ footer p{
 		width:auto;
 	}
 
-
 	#main_navigation li:last-child{
 		margin-right:0px;
 		
 	}
-
-
 
 	#main_navigation li:hover{
 		background-color:$j-hl-teal;
 		color:#FFF;	
 	}
 
+	/* ABOUT SECTION */
+
+	#about_me{
+		padding:0 10px;
+		overflow:hidden;
+		min-height:600px;
+		padding-top:80px;
+	}	
+
+	#about_wrap{ 
+		@include outer-container(80%);
+		margin:40px auto 10px;
+		padding-bottom:10px;
+
+	}
+
+	#about_me p, #about_me h1{
+		@include span-columns(7);
+		text-align:left;
+		font-size:1.5em;
+		line-height:1.8;
+		@include shift(1);
+
+	}
+
+	.about_image{
+		@include span-columns(4);
+		padding:0;
+		margin:0;
+	}
+
+
+
+
 	/*  SLICK IMAGES */
+	
+
+	.gallery_wrap{
+		width:100%;
+		margin:0px;
+		padding:10px 0px;
+		overflow:hidden;
+	}
+
+	.client_gallery{
+		margin-top:100px;
+		background-color:$j-primary-grey;
+	}
 
 	.client_gallery .slick-list{
 		padding:5px;
@@ -338,9 +429,11 @@ footer p{
 	.client_gallery{
 		@include outer-container(80%);
 	}
+
 	.main-slick{
 		width:auto;
 		transition:all 3s $ease-out-back;
+		top:100
 	}
 
 
@@ -369,6 +462,8 @@ footer p{
 	@include span-columns(3);
 	padding:0.5em 0em;
 }
+
+
 
 /* FOOTER */
 footer p{
@@ -410,7 +505,8 @@ footer p{
 }
 
 
-@media screen and (min-width:820px) and (max-width:1400px) {	
+@media screen and (min-width:820px) and (max-width:1400px) {
+ 	
 
 	.client_desc{
 		@include span-columns(6);
@@ -422,6 +518,10 @@ footer p{
 		margin-left: 0;
 		color:$j-primary-grey;
 	}
+
+
+
+
 
 	.aThumb:nth-child(4n){
 	margin-right:0px;
@@ -448,7 +548,7 @@ footer p{
 
 	.client_gallery{
 		@include outer-container(98%);
-		margin-top:10px;
+		margin-top:100px;
 	}
 
 	#main_navigation li{
