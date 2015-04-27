@@ -7,9 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
     <title>JasperDavis.org</title>
 
+
     <link rel="stylesheet" href="styles/vendor.css">
-     
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+   <!--<link rel="stylesheet" type="text/css" href="slick/slick.css"/>-->
+   <link rel="stylesheet" type="text/css" href="styles/GIThewall.css"/>
 
     <!-- GOOGLE FONT LATO -->
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
@@ -20,108 +22,134 @@
 
   <body>
     <div class="page-wrap">
-    <header>
-      <div class="mobi-header">
-        <img src="images/logo.png" class="main-logo unloading" alt="logo">
-        <img src="images/mobi-nav-btn.png" class="mobi_nav_btn">
-      </div>
-    <nav id="main_navigation">
-      <ul>
-        <li class="unloading">about me</li>
-        <li class="unloading">view resume</li>
-        <li class="unloading">email me</li>
-        <li class="unloading">facebook</li>
-        <li class="unloading">twitter</li>
+      <header>
+        <div class="header-spacer">
+          <div class="mobi-header">
+            <img src="images/logo.png" class="main-logo" style="max-height:100px;" alt="logo">
+            <img src="images/mobi-nav-btn.png" class="mobi_nav_btn">
+          </div>
+          <nav id="main_navigation">
+            <ul>
+              <a data-scroll-nav="0"><li >about me</li></a>
+              <a data-scroll-nav="1"><li >portfolio</li></a>
+              <a data-scroll-nav="2"><li >resume</li></a>
+              <a href="https://www.facebook.com/jasper.davis" target="_blank"><li ><i class="fa fa-facebook-square"></i> <span class="mobi-only">facebook</span></li></a>
+              <a href="https://github.com/jaypith" target="_blank"><li><i class="fa fa-github-square"></i> <span class="mobi-only">github</span></li></a>
+            </ul>
+          </nav>
+        </div>
+      </header>
+       <section id="about_me">
+        <div data-scroll-index="0" style="height:40px; clear:both;"></div>
+          <div id="about_wrap">
+            <img src="http://placehold.it/400x400/C652C6/ffffff&amp;text=About Image" class="about_image">
+            <h1>ABOUT</h1>
+            <p>A multifaceted graphic designer, with experience in front-end development, UI design  & digital signage. I have well rounded set of skills and an unabashed love of geek culutre, including but not limted to zombies, video game and pug doodles.<p>
+          </div>
+        </section>
 
-      </ul>
-    </nav>
-    </header>
-  
-    <section class="client_gallery">
-      <!--<h1>TITLE</h1>-->
-     
-      <div class="main-slick unloading2">
-        <div><img src="http://placehold.it/675x456/C652C6/ffffff&amp;text=1" alt="" class="product-image"></div>
-        <div><img src="http://placehold.it/675x456/DEC2DD/ffffff&amp;text=2" alt="" class="product-image"></div>
-        <div><img src="http://placehold.it/675x456/2E891A/ffffff&amp;text=3" alt="" class="product-image"></div>
-        <div><img src="http://placehold.it/675x456/E2A347/ffffff&amp;text=4" alt="" class="product-image"></div>
-        <div><img src="http://placehold.it/675x456/C652C6/ffffff&amp;text=5" alt="" class="product-image"></div>
-        <div><img src="http://placehold.it/675x456/DEC2DD/ffffff&amp;text=6" alt="" class="product-image"></div>
-        <div><img src="http://placehold.it/675x456/2E891A/ffffff&amp;text=7" alt="" class="product-image"></div>
-       <div><img src="http://placehold.it/675x456/E2A347/ffffff&amp;text=8" alt="" class="product-image"></div>
-      </div>
+      <!-- ****************************************-->
+      <!--************** PAGE 2 ****************-->
+      <!-- ****************************************-->
+          <div class="gallery_wrap">
+            <div data-scroll-index="1" style="height:20px;"></div>
+           
+          
+           <section class="client-thumbs">
+              <div class="GITheWall">
+                <ul>
 
-      <article class="client_desc">
-        <p><strong>Client Write Up</strong> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat, felis vel convallis condimentum, orci nulla eleifend quam, malesuada vulputate risus erat in neque. Phasellus elementum, nulla a iaculis hendrerit, nisl turpis lobortis lorem.</p>
-      </article>
-        <div class="slider-placement">
-          <div class="slider-nav">
-            <div><img src="http://placehold.it/675x456/C652C6/ffffff&amp;text=1" alt="" class="product-image"></div>
-            <div><img src="http://placehold.it/675x456/DEC2DD/ffffff&amp;text=2" alt="" class="product-image"></div>
-            <div><img src="http://placehold.it/675x456/2E891A/ffffff&amp;text=3" alt="" class="product-image"></div>
-            <div><img src="http://placehold.it/675x456/E2A347/ffffff&amp;text=4" alt="" class="product-image"></div>
-            <div><img src="http://placehold.it/675x456/C652C6/ffffff&amp;text=5" alt="" class="product-image"></div>
-            <div><img src="http://placehold.it/675x456/DEC2DD/ffffff&amp;text=6" alt="" class="product-image"></div>
-            <div><img src="http://placehold.it/675x456/2E891A/ffffff&amp;text=7" alt="" class="product-image"></div>
-            <div><img src="http://placehold.it/675x456/E2A347/ffffff&amp;text=8" alt="" class="product-image"></div>
-        </div>
-      </div>
-    </section>
-  
+                  <li class="aThumb" data-contenttype="image" data-href="images/gallery/manchu_web_001.jpg">
+                    <img src="images/gallery/manchu_web_001_thumb.jpg" alt="Manchu Wok" class="product-image">
+                  </li>
+                  <li class="aThumb" data-contenttype="image" data-href="images/gallery/manchu_web_002.jpg">
+                    <img src="images/gallery/manchu_web_002_thumb.jpg" alt="Manchu Wok" class="product-image">
+                  </li>
+                  <li class="aThumb" data-contenttype="image" data-href="images/gallery/manchu_web_003.jpg">
+                    <img src="images/gallery/manchu_web_003_thumb.jpg" alt="Manchu Wok" class="product-image">
+                  </li>
+                   <li class="aThumb" data-contenttype="image" data-href="images/gallery/pearlking_web_001.jpg">
+                    <img src="images/gallery/pearlking_web_001_thumb.jpg" alt="Pearl King" class="product-image">
+                  </li>
+                  <li class="aThumb" data-contenttype="image" data-href="images/gallery/piatto_web_001.jpg">
+                    <img src="images/gallery/piatto_web_001_thumb.jpg" alt="Pearl King" class="product-image">
+                  </li>
+                    <li class="aThumb" data-contenttype="image" data-href="images/gallery/trevi_web_001.jpg">
+                    <img src="images/gallery/trevi_web_001_thumb.jpg" alt="Trevi" class="product-image">
+                  </li>
+                    <li class="aThumb" data-contenttype="image" data-href="images/gallery/trevi_web_002.jpg">
+                    <img src="images/gallery/trevi_web_002_thumb.jpg" alt="Trevi" class="product-image">
+                  </li>
+                    <li class="aThumb" data-contenttype="image" data-href="images/gallery/westhill_web_001.jpg">
+                    <img src="images/gallery/westhill_web_001_thumb.jpg" alt="Trevi" class="product-image">
+                  </li>
+                   <li class="aThumb" data-contenttype="image" data-href="images/gallery/cyop_web_001.jpg">
+                    <img src="images/gallery/cyop_web_001_thumb.jpg" alt="Trevi" class="product-image">
+                  </li>
+                  
+                  <li class="aThumb" data-contenttype="image" data-href="images/gallery/catch_web_001.jpg">
+                    <img src="images/gallery/catch_web_001_thumb.jpg" alt="Catch Hospitality" class="product-image">
+                  </li>
+                  <li class="aThumb" data-contenttype="image" data-href="images/gallery/catch_web_002.jpg">
+                    <img src="images/gallery/catch_web_002_thumb.jpg" alt="Catch Hospitality" class="product-image">
+                  </li>
+                    <li class="aThumb" data-contenttype="image" data-href="images/gallery/costavida_mb_001.jpg">
+                    <img src="images/gallery/costavida_mb_001_thumb.jpg" alt="Catch Hospitality" class="product-image">
+                  </li>
+                  <li class="aThumb" data-contenttype="image" data-href="images/gallery/costavida_mb_002.jpg">
+                    <img src="images/gallery/costavida_mb_002_thumb.jpg" alt="Catch Hospitality" class="product-image">
+                  </li>
+                  <li class="aThumb" data-contenttype="image" data-href="images/gallery/costavida_mb_003.jpg">
+                    <img src="images/gallery/costavida_mb_003_thumb.jpg" alt="Catch Hospitality" class="product-image">
+                  </li>
+                  <li class="aThumb" data-contenttype="image" data-href="images/gallery/costavida_mb_004.jpg">
+                    <img src="images/gallery/costavida_mb_004_thumb.jpg" alt="Catch Hospitality" class="product-image">
+                  </li>  
+                  <li class="aThumb" data-contenttype="image" data-href="images/gallery/costavida_mb_005.jpg">
+                    <img src="images/gallery/costavida_mb_005_thumb.jpg" alt="Catch Hospitality" class="product-image">
+                  </li>
+                   <li class="aThumb" data-contenttype="image" data-href="images/gallery/tinleaf_mb_002.jpg">
+                    <img src="images/gallery/tinleaf_mb_002_thumb.jpg" alt="Tin Leaf" class="product-image">
+                  </li>
+                      <li class="aThumb" data-contenttype="image" data-href="images/gallery/tinleaf_mb_001.jpg">
+                    <img src="images/gallery/tinleaf_mb_001_thumb.jpg" aalt="Tin Leaf" class="product-image">
+                  </li>
+                      <li class="aThumb" data-contenttype="image" data-href="images/gallery/tinleaf_mb_003.jpg">
+                    <img src="images/gallery/tinleaf_mb_003_thumb.jpg" alt="Tin Leaf" class="product-image">
+                  </li>
+                      <li class="aThumb" data-contenttype="image" data-href="images/gallery/tinleaf_mb_004.jpg">
+                    <img src="images/gallery/tinleaf_mb_004_thumb.jpg" alt="Tin Leaf" class="product-image">
+                  </li>
+                      <li class="aThumb" data-contenttype="image" data-href="images/gallery/tinleaf_mb_005.jpg">
+                    <img src="images/gallery/tinleaf_mb_005_thumb.jpg" alt="Tin Leaf" class="product-image">
+                  </li>
+                       <li class="aThumb" data-contenttype="image" data-href="images/gallery/tinleaf_web_001.jpg">
+                    <img src="images/gallery/tinleaf_web_001_thumb.jpg" alt="Tin Leaf" class="product-image">
+                  </li>
+                  
+                
 
-    <section class="client-thumbs">
-        <div class="aThumb">
-          <img src="http://placehold.it/300x120/00A99D/ffffff&amp;text=CLIENT" alt="" class="product-image">
-          <h3>Client Name</h3>
-        </div>
-        <div class="aThumb">
-          <img src="http://placehold.it/300x120/00A99D/ffffff&amp;text=CLIENT" alt="" class="product-image">
-          <h3>Client Name</h3>
-        </div>
-         <div class="aThumb">
-          <img src="http://placehold.it/300x120/00A99D/ffffff&amp;text=CLIENT" alt="" class="product-image">
-          <h3>Client Name</h3>
-        </div>
-        <div class="aThumb">
-          <img src="http://placehold.it/300x120/00A99D/ffffff&amp;text=CLIENT" alt="" class="product-image">
-          <h3>Client Name</h3>
-        </div>
-         <div class="aThumb">
-          <img src="http://placehold.it/300x120/00A99D/ffffff&amp;text=CLIENT" alt="" class="product-image">
-          <h3>Client Name</h3>
-        </div>
-        <div class="aThumb">
-          <img src="http://placehold.it/300x120/00A99D/ffffff&amp;text=CLIENT" alt="" class="product-image">
-          <h3>Client Name</h3>
-        </div>
-         <div class="aThumb">
-          <img src="http://placehold.it/300x120/00A99D/ffffff&amp;text=CLIENT" alt="" class="product-image">
-          <h3>Client Name</h3>
-        </div>
-        <div class="aThumb">
-          <img src="http://placehold.it/300x120/00A99D/ffffff&amp;text=CLIENT" alt="" class="product-image">
-          <h3>Client Name</h3>
-        </div>
-        <div class="aThumb">
-          <img src="http://placehold.it/300x120/00A99D/ffffff&amp;text=CLIENT" alt="" class="product-image">
-          <h3>Client Name</h3>
-        </div>
-        <div class="aThumb">
-          <img src="http://placehold.it/300x120/00A99D/ffffff&amp;text=CLIENT" alt="" class="product-image">
-          <h3>Client Name</h3>
-        </div>
-        <div class="aThumb">
-          <img src="http://placehold.it/300x120/00A99D/ffffff&amp;text=CLIENT" alt="" class="product-image">
-          <h3>Client Name</h3>
-        </div>
-        <div class="aThumb">
-          <img src="http://placehold.it/300x120/00A99D/ffffff&amp;text=CLIENT" alt="" class="product-image">
-          <h3>Client Name</h3>
-        </div>
+            </ul>
+
+               
+              </div>
+          </section>
         
+    </div>
+
+      <!-- ****************************************-->
+          <!--************** PAGE 3 ****************-->
+      <!-- ****************************************-->
+ 
+       
       
-    </section>
-  </div>
+      
+        <section id="resume" data-scroll-index="2"> 
+              <h3 style="margin-top:100px; font-size:3em; color:#000;">RESUME</h3>
+        </section>
+      
+    </div>
+
     <footer>
       <p>JASPER DAVIS • 2015</p>
     </footer>
@@ -130,7 +158,10 @@
 
 
     <script src="scripts/main.js"></script>
+
+
       <script type="text/javascript" src="slick/slick.min.js"></script>
-      <script type="text/javascript" src="scripts/slick-init.js"></script>
+      <script src="scripts/jQuery.GI.TheWall.js" type="text/javascript"></script>
+      <script src="scripts/scrollIt.js" type="text/javascript"></script>
   </body>
 </html>
