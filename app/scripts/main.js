@@ -10,6 +10,10 @@
   		});
 	});
 
+	
+	$('.about_image').removeClass('unloading2');
+	$('.aThumb img').removeClass('unloading1');
+	
     $('.GITheWall').GITheWall({
   	nextButtonClass: 'fa fa-arrow-right',
 	prevButtonClass: 'fa fa-arrow-left',
@@ -44,7 +48,7 @@
 	  dynamicHeight: true,
 	});
 
-    $('.main-slick').toggleClass('unloading2');
+   
 
 
     $('.mobi_nav_btn').on('click', function(eventObject) {

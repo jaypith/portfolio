@@ -67,7 +67,7 @@
             bottom: 10
           },
           scrollerElm: null,
-          scrollOffset: 150,
+          scrollOffset: 300,
           // settings
           arrows: true,
           closebutton: true,
